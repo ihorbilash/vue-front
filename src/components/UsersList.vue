@@ -91,7 +91,7 @@ export default {
             await fetch(route, {
                 method: "DELETE",
                 headers: {
-                    "Host": '52.91.166.80',
+                    "Host": 'ec2-52-91-166-80.compute-1.amazonaws.com',
                 }
             })
             console.log('=>', this.selectedUser.usersId);
@@ -105,7 +105,7 @@ export default {
                 method: "PUT",
                 body: this.editingUser,
                 headers: {
-                    "Host": '52.91.166.80',
+                    "Host": 'ec2-52-91-166-80.compute-1.amazonaws.com',
                 }
             })
             console.log('=>', this.editingUser)
