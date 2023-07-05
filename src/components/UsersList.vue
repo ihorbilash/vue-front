@@ -86,16 +86,28 @@ export default {
             this.isOpen = false;
         },
         deleteUser: async function () {
-            const route = api + `/dev/user/${this.selectedUser.usersId}`;
-            //await axios.delete(route);
+
+            const route = `${api}/dev/user/${this.selectedUser.usersId}`;
+            await fetch(route, {
+                method: "DELETE",
+                headers: {
+                    "Host": '52.91.166.80',
+                }
+            })
             console.log('=>', this.selectedUser.usersId);
             this.selectedUser = null;
             this.$emit('client-created');
 
         },
         saveUser: async function () {
-            const route = api + `/dev/user/${this.editingUser.usersId}`;
-          //  await axios.put(route, this.editingUser)
+            const route = `${api}/dev/user/${this.editingUser.usersId}`;
+            await fetch(route, {
+                method: "PUT",
+                body: this.editingUser,
+                headers: {
+                    "Host": '52.91.166.80',
+                }
+            })
             console.log('=>', this.editingUser)
             this.editingUser = null;
             this.$emit('client-created');
